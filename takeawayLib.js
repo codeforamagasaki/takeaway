@@ -96,15 +96,15 @@ var Takeaway = (function () {
                 $("#phone_view").html( "-");
             }
 
-            if (tags["contact:mail"] != null) {
-                $("#mail").attr('href', "mailto:" + tags["contact:mail"]);
-                $("#mail_view").html( tags["contact:mail"]);
-            } else if (tags["mail"] != null){
-                $("#mail").attr('href', "mailto:" + tags.mail);
-                $("#mail_view").html( tags.mail);
+            if (tags["contact:email"] != null) {
+                $("#email").attr('href', "mailto:" + tags["contact:email"]);
+                $("#email_view").html( tags["contact:email"]);
+            } else if (tags["email"] != null){
+                $("#email").attr('href', "mailto:" + tags.email);
+                $("#email_view").html( tags.email);
             } else {
-                $("#mail").attr('href', "");
-                $("#mail_view").html( "-");
+                $("#email").attr('href', "");
+                $("#email_view").html( "-");
             }
 
             if (tags["contact:website"] != null) {
