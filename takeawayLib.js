@@ -96,6 +96,17 @@ var Takeaway = (function () {
                 $("#phone_view").html( "-");
             }
 
+            if (tags["contact:mail"] != null) {
+                $("#mail").attr('href', "mailto:" + tags["contact:mail"]);
+                $("#mail_view").html( tags["contact:mail"]);
+            } else if (tags["mail"] != null){
+                $("#mail").attr('href', "mailto:" + tags.mail);
+                $("#mail_view").html( tags.mail);
+            } else {
+                $("#mail").attr('href', "");
+                $("#mail_view").html( "-");
+            }
+
             if (tags["contact:website"] != null) {
                 $("#url").attr('href', tags["contact:website"]);
                 $("#url_view").html( tags["contact:website"]);
