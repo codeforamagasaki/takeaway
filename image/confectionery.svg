@@ -31,6 +31,7 @@
        offset="0"
        id="stop43" /><stop
        style="stop-color:#f208ab;stop-opacity:1"
+<<<<<<< HEAD
 =======
        style="stop-color:#000000;stop-opacity:1;"
        offset="0"
@@ -47,6 +48,8 @@
 =======
        style="stop-color:#e3f208;stop-opacity:1"
 >>>>>>> b81cb0f... お菓子屋さんケーキ屋さんのアイコンを追加
+=======
+>>>>>>> 4b961ee... お菓子屋さんケーキ屋さんのアイコンを追加
        offset="1"
        id="stop45" /></linearGradient><clipPath
      clipPathUnits="userSpaceOnUse"
