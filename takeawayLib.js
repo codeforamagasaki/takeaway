@@ -87,6 +87,16 @@ var Takeaway = (function () {
 
             $("#phone").attr('href', tags.phone == null ? "" : "tel:" + tags.phone);
             $("#phone_view").html(tags.phone == null ? "-" : tags.phone);
+            if (tags["contact:phone"] != null) {
+                $("#phone").attr('href', "tel:" + tags["contact:phone"]);
+                $("#phone_view").html( tags["contact:phone"]);
+            } else if (tags["phone"] != null){
+                $("#phone").attr('href', "tel:" + tags.phone);
+                $("#phone_view").html( tags.phone);
+            } else {
+                $("#phone").attr('href', "");
+                $("#phone_view").html( "-");
+            }
 
             if (tags["contact:website"] != null) {
                 $("#url").attr('href', tags["contact:website"]);
