@@ -109,7 +109,7 @@ var Takeaway = (function () {
 
             if (tags["addr:city"] != null || tags["addr:quarter"] != null || tags["addr:neighbourhood"] != null || tags["addr:block_number"] != null || tags["addr:housenumber"] != null) {
                 $("#addr").html(
-                    ( tags["addr:city"] == null ? "" : tags["addr:housenumber"]) +
+                    ( tags["addr:city"] == null ? "" : tags["addr:city"]) +
                     ( tags["addr:quarter"] == null ? "" : tags["addr:quarter"]) +
                     ( tags["addr:neighbourhood"] == null ? "" : tags["addr:neighbourhood"]) +
                     ( tags["addr:block_number"] == null ? "" : "-" + tags["addr:block_number"]) +
