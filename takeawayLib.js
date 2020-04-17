@@ -118,6 +118,23 @@ var Takeaway = (function () {
                 $("#url_view").html( "-");
             }
 
+            if (tags["contact:facebook"] != null) {
+                $("#facebook").attr('href', tags["contact:facebook"]);
+                $("#facebook_view").html( tags["contact:facebook"]);
+            }
+            if (tags["contact:instagram"] != null) {
+                $("#instagram").attr('href', tags["contact:instagram"]);
+                $("#instagram_view").html( tags["contact:instagram"]);
+            }
+            if (tags["contact:twitter"] != null) {
+                $("#twitter").attr('href', tags["contact:twitter"]);
+                $("#twitter_view").html( tags["contact:twitter"]);
+            }
+            if (tags["contact:line"] != null) {
+                $("#line").attr('href', tags["contact:line"]);
+                $("#line_view").html( tags["contact:line"]);
+            }
+
             if (tags["addr:city"] != null || tags["addr:quarter"] != null || tags["addr:neighbourhood"] != null || tags["addr:block_number"] != null || tags["addr:housenumber"] != null) {
                 $("#addr").html(
                     ( tags["addr:city"] == null ? "" : tags["addr:city"]) +
