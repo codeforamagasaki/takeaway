@@ -14,7 +14,8 @@
             "ice_cream": "アイスクリーム店",
             "pub": "パブ/居酒屋",
             "restaurant": "レストラン",
-            "vending_machine": "自動販売機"
+            "vending_machine": "自動販売機",
+            "theatre": "劇場／ライブスペース"
         },
         "shop": {
             "alcohol": "酒屋",
