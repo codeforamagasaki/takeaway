@@ -43,15 +43,20 @@
             "zoom": 15,
             "icon": "./image/delivery.svg"
         },
-        "DEF": {
+        "BKR": {
             "list": true,
             "zoom": 15,
-            "icon": "./image/bentou.svg"
+            "icon": "./image/bakery.svg"
         },
-        "CDB": {
+        "DLI": {
             "list": true,
             "zoom": 15,
-            "icon": "./image/bentou.svg"
+            "icon": "./image/deli.svg"
+        },
+        "CFR": {
+            "list": true,
+            "zoom": 15,
+            "icon": "./image/confectionery.svg"
         },
         "FST": {
             "list": true,
