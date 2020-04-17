@@ -85,8 +85,6 @@ var Takeaway = (function () {
             $("#outdoor_seating").html(outseet);
             if (outseet !== "-") $("#outdoor_seating").attr("glot-model", "outdoor_seating_" + outseet);
 
-            $("#phone").attr('href', tags.phone == null ? "" : "tel:" + tags.phone);
-            $("#phone_view").html(tags.phone == null ? "-" : tags.phone);
             if (tags["contact:phone"] != null) {
                 $("#phone").attr('href', "tel:" + tags["contact:phone"]);
                 $("#phone_view").html( tags["contact:phone"]);
@@ -107,6 +105,16 @@ var Takeaway = (function () {
             } else {
                 $("#url").attr('href', "");
                 $("#url_view").html( "-");
+            }
+
+            if (tags["addr:city"] != null || tags["addr:quarter"] != null || tags["addr:neighbourhood"] != null || tags["addr:block_number"] != null || tags["addr:housenumber"] != null) {
+                $("#addr").html(
+                    ( tags["addr:city"] == null ? "" : tags["addr:housenumber"]) +
+                    ( tags["addr:quarter"] == null ? "" : tags["addr:quarter"]) +
+                    ( tags["addr:neighbourhood"] == null ? "" : tags["addr:neighbourhood"]) +
+                    ( tags["addr:block_number"] == null ? "" : "-" + tags["addr:block_number"]) +
+                    ( tags["addr:housenumber"] == null ? "" : "-" + tags["addr:housenumber"])
+                );
             }
 
             $("#description").html(tags.description == null ? "-" : tags.description);
