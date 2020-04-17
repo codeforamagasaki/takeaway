@@ -17,7 +17,9 @@ const FILES = ['modals.html', 'data/category-ja.json', 'data/datatables-ja.json'
 const OverPass = {
     TAK: ['node["takeaway"!="no"]["takeaway"]', 'way["takeaway"!="no"]["takeaway"]', 'node["takeaway:covid19"!="no"]["takeaway:covid19"]', 'way["takeaway:covid19"!="no"]["takeaway:covid19"]'],
     DEL: ['node["delivery"!="no"]["delivery"]', 'way["delivery"!="no"]["delivery"]', 'node["delivery:covid19"!="no"]["delivery:covid19"]', 'way["delivery:covid19"!="no"]["delivery:covid19"]'],
-    CDB: ['node["shop"~"confectionery|deli|bakery"]', 'way["shop"~"confectionery|deli|bakery"]'],
+    BKR: ['node["shop"="bakery"]', 'way["shop"="bakery"]'],
+    DLI: ['node["shop"="deli"]', 'way["shop"="deli"]'],
+    CFR: ['node["shop"="confectionery"]', 'way["shop"="confectionery"]'],
     FST: ['node["amenity"="fast_food"]', 'way["amenity"="fast_food"]'],
 };
 
