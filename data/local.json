@@ -58,6 +58,11 @@
             "zoom": 15,
             "icon": "./image/confectionery.svg"
         },
+        "PTY": {
+            "list": true,
+            "zoom": 15,
+            "icon": "./image/pastry.svg"
+        },
         "FST": {
             "list": true,
             "zoom": 15,
