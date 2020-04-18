@@ -20,6 +20,7 @@ const OverPass = {
     BKR: ['node["shop"="bakery"]', 'way["shop"="bakery"]'],
     DLI: ['node["shop"="deli"]', 'way["shop"="deli"]'],
     CFR: ['node["shop"="confectionery"]', 'way["shop"="confectionery"]'],
+    PTY: ['node["shop"="pastry"]', 'way["shop"="pastry"]'],
     FST: ['node["amenity"="fast_food"]', 'way["amenity"="fast_food"]'],
 };
 
