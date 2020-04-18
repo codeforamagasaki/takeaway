@@ -155,6 +155,8 @@ var Takeaway = (function () {
                     ( tags["addr:block_number"] == null ? "" : "-" + tags["addr:block_number"]) +
                     ( tags["addr:housenumber"] == null ? "" : "-" + tags["addr:housenumber"])
                 );
+            } else {
+                $("#addr").html( "-");
             }
 
             $("#description").html(tags.description == null ? "-" : tags.description);
