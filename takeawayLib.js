@@ -55,11 +55,11 @@ var Takeaway = (function () {
             _status = "view";
             DataList.select(tags.id);
 
-            let osmid = tags.id.replace('/', "-");
+            let osmid = tags.id;//.replace('/', "-");
             history.replaceState('', '', location.pathname + "?" + osmid + location.hash);
 
             $("#osmid").html(tags.id);
-            $("#name").html(tags.name == null ? "-" : tags.name);
+            $("#name").html(tags.name);
             $("#category-icon").attr("src", tags.takeaway_icon);
             $("#category").html(Takeaway.get_catname(tags));
 
@@ -231,7 +231,8 @@ var Marker = (function () {
             let markers = [];
             if (geojson !== undefined) {
                 geojson.features.forEach(function (node) {
-                    let tags = node.properties;
+                    let tags = node.properties.tags;
+                    $.extend( tags, { "id": node.properties.id, "timestamp": new Date( node.properties.meta.timestamp)});
                     let icon = L.divIcon({ className: 'icon', html: '<img class="icon" src="' + Conf.target[key].icon + '">' });
                     if (node.geometry.type == "Polygon") {
                         latlngs[tags.id] = { "lat": node.geometry.coordinates[0][0][1], "lng": node.geometry.coordinates[0][0][0] };
@@ -261,7 +262,9 @@ var Marker = (function () {
                 if (PoiData[key].markers !== undefined) {
                     PoiData[key].markers.forEach(marker => {
                         let tags = marker.takeaway_tags;
-                        let name = tags.name == undefined ? "-" : tags.name;
+                        //更新一週間以内のデータには印を付加する
+                        let _7DaysAgo = new Date( new Date( ).getFullYear(), new Date( ).getMonth( ) , new Date( ).getDate( ) - 7);
+                        let name = tags.name == undefined ? "-" : tags.name + ( _7DaysAgo < tags.timestamp? "<span class=\"updated\"></span>": '');
                         let category = Takeaway.get_catname(tags);
                         let between = Math.round(Takeaway.calc_between(latlngs[tags.id], map.getCenter()));
                         datas.push({ "osmid": tags.id, "name": name, "category": category, "between": between });
@@ -457,7 +460,7 @@ var OvPassCnt = (function () {
                     targets.forEach(key => {
                         let query = "";
                         for (let ovpass in OverPass[key]) { query += OverPass[key][ovpass] + maparea; }
-                        let url = OvServer + '?data=[out:json][timeout:30];(' + query + ');out body;>;out skel qt;';
+                        let url = OvServer + '?data=[out:json][timeout:30];(' + query + ');out meta qt;';
                         console.log("GET: " + url);
                         jqXHRs.push($.get(url, () => { DisplayStatus.progress(Math.ceil(((++Progress + 1) * 100) / LayerCounts)) }));
                     });
@@ -470,10 +473,10 @@ var OvPassCnt = (function () {
                                 reject()
                             };
                             let osmxml = arguments[i++][0]
-                            let geojson = osmtogeojson(osmxml, { flatProperties: true });
+                            let geojson = osmtogeojson(osmxml, { flatProperties: false });
                             geojson.features.forEach(function (val) { delete val.id; }); // delete Unnecessary osmid
                             geojson = geojson.features.filter(val => { // 非対応の店舗はキャッシュに載せない
-                                if (Takeaway.get_catname(val.properties) !== "") return val;
+                                if (Takeaway.get_catname(val.properties.tags) !== "") return val;
                             });
                             Cache[key] = { "features": geojson };
                         });
