@@ -460,7 +460,7 @@ var OvPassCnt = (function () {
                     targets.forEach(key => {
                         let query = "";
                         for (let ovpass in OverPass[key]) { query += OverPass[key][ovpass] + maparea; }
-                        let url = OvServer + '?data=[out:json][timeout:30];(' + query + ');out meta qt;';
+                        let url = OvServer + '?data=[out:json][timeout:30];(' + query + ');(._;>;);out meta qt;';
                         console.log("GET: " + url);
                         jqXHRs.push($.get(url, () => { DisplayStatus.progress(Math.ceil(((++Progress + 1) * 100) / LayerCounts)) }));
                     });
