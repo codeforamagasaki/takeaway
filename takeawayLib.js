@@ -59,7 +59,7 @@ var Takeaway = (function () {
             history.replaceState('', '', location.pathname + "?" + osmid + location.hash);
 
             $("#osmid").html(tags.id);
-            $("#name").html(tags.name);
+            $("#name").html(tags.name == null ? "-" : tags.name);
             $("#category-icon").attr("src", tags.takeaway_icon);
             $("#category").html(Takeaway.get_catname(tags));
 
