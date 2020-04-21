@@ -191,6 +191,12 @@ var Takeaway = (function () {
             document.execCommand('copy');
             $("#copyTarget").remove();
         },
+        editmap: osmid => {
+            let poi = Marker.get(osmid);
+            let zoom = map.getZoom();
+            let name = poi.tag.name == undefined ? "" : "search/" + poi.tag.name + "/";
+            window.open('https://www.mapcontrib.xyz/t/1c17e9#position/' + zoom + '/' + poi.ll.lat + '/' + poi.ll.lng);
+        },
 
         // get Category Name from Conf.category(Global Variable)
         get_catname: function (tags) {
