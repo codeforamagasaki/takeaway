@@ -92,7 +92,6 @@ var Takeaway = (function () {
                 $("#phone").attr('href', "tel:" + tags.phone);
                 $("#phone_view").html( tags.phone);
             } else {
-                $("#phone").attr('href', "");
                 $("#phone_view").html( "-");
             }
 
@@ -103,47 +102,41 @@ var Takeaway = (function () {
                 $("#email").attr('href', "mailto:" + tags.email);
                 $("#email_view").html( tags.email);
             } else {
-                $("#email").attr('href', "");
                 $("#email_view").html( "-");
             }
 
             if (tags["contact:website"] != null) {
                 $("#url").attr('href', tags["contact:website"]);
-                $("#url_view").html( tags["contact:website"]);
+                $("#url_view").html( "公式サイト");
             } else if (tags["website"] != null){
                 $("#url").attr('href', tags.website);
-                $("#url_view").html( tags.website);
+                $("#url_view").html( "公式サイト");
             } else {
-                $("#url").attr('href', "");
                 $("#url_view").html( "-");
             }
 
             if (tags["contact:facebook"] != null) {
                 $("#facebook").attr('href', tags["contact:facebook"]);
-                $("#facebook_view").html( tags["contact:facebook"]);
+                $("#facebook_view").html( "facebook");
             } else {
-                $("#facebook").attr('href', "");
                 $("#facebook_view").html( "-");
             }
             if (tags["contact:instagram"] != null) {
                 $("#instagram").attr('href', tags["contact:instagram"]);
-                $("#instagram_view").html( tags["contact:instagram"]);
+                $("#instagram_view").html( "instagram");
             } else {
-                $("#instagram").attr('href', "");
                 $("#instagram_view").html( "-");
             }
             if (tags["contact:twitter"] != null) {
                 $("#twitter").attr('href', tags["contact:twitter"]);
-                $("#twitter_view").html( tags["contact:twitter"]);
+                $("#twitter_view").html( "twitter");
             } else {
-                $("#twitter").attr('href', "");
                 $("#twitter_view").html( "-");
             }
             if (tags["contact:line"] != null) {
                 $("#line").attr('href', tags["contact:line"]);
-                $("#line_view").html( tags["contact:line"]);
+                $("#line_view").html( "line");
             } else {
-                $("#line").attr('href', "");
                 $("#line_view").html( "-");
             }
 
