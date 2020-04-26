@@ -35,8 +35,8 @@
                         <div class="col-2 p-1">種類</div>
                         <div class="col-1 p-1"><img src="" class="icon" id="category-icon" /></div>
                         <div class="col-8 p-1"><span id="category"></span></div>
-                        <button type="button" class="btn btn-secondary col-1 p-0" onclick="Takeaway.sharemap($('#osmid').html())" title="このお店をシェアする">
-                            <i class="fas fa-share-alt"></i>
+                        <button type="button" class="btn btn-secondary col-1 p-0" onclick="Takeaway.sharemap($('#osmid').html())" title="このURLをコピーする" onanimationend="Takeaway.sharemapEnd()">
+                            <i class="fas fa-clone"></i><span id="copied">URLをクリップボードへコピーしました</span>
                         </button>
                     </div>
                     <div class="row mb-1 align-items-center">
