@@ -27,6 +27,11 @@
             "divider": true
         },
         {
+            "glot-model": "provision",
+            "linkto": "https://docs.google.com/forms/d/e/1FAIpQLSfpdez_KYjkNe0JulXAVq3RwEdvTntj1sfxw-6Da55CdRQ4OQ/viewform?usp=sf_link",
+            "divider": false
+        },
+        {
             "glot-model": "owner",
             "linkto": "https://c4ama.wordpress.com/",
             "divider": false

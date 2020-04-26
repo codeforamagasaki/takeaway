@@ -3,6 +3,10 @@
         "ja": "みんなでテイクアウトMAP <尼崎版>",
         "en": "Takeout MAP with everyone <Amagasaki Ver>"
     },
+    "provision": {
+        "ja": "お店情報登録代行依頼フォーム",
+        "en": "Store information registration request form"
+    },
     "owner": {
         "ja": "コードフォー尼崎について",
         "en": "about Code for Amagasaki"
