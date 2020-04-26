@@ -67,6 +67,11 @@
             "list": true,
             "zoom": 15,
             "icon": "./image/fastfood.svg"
+        },
+        "CAF": {
+            "list": true,
+            "zoom": 15,
+            "icon": "./image/cafe.svg"
         }
     }
 }
