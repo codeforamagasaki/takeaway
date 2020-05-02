@@ -22,7 +22,7 @@ const OverPass = {
     CFR: ['node["shop"="confectionery"]', 'way["shop"="confectionery"]'],
     PTY: ['node["shop"="pastry"]', 'way["shop"="pastry"]'],
     FST: ['node["amenity"="fast_food"]', 'way["amenity"="fast_food"]'],
-    CAF: ['node["amenity"="cafe"]', 'way["amenity"="cafe"]'],
+    CAF: ['node["amenity"="cafe"]["takeaway"!="no"]["takeaway"]', 'way["amenity"="cafe"]["takeaway"!="no"]["takeaway"]'],
 };
 
 $(document).ready(function () {
