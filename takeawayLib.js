@@ -152,7 +152,15 @@ var Takeaway = (function () {
                 $("#addr").html( "-");
             }
 
-            $("#description").html(tags.description == null ? "-" : tags.description);
+            if (tags.description != null || tags["takeaway:description"] != null || tags["delivery:description"] != null) {
+                $("#description").html(
+                    ( tags.description == null ? "" : tags.description + "<br>") +
+                    ( tags["takeaway:description"] == null ? "" : tags["takeaway:description"] + "<br>") +
+                    ( tags["delivery:description"] == null ? "" : tags["delivery:description"])
+                );
+            } else {
+                $("#description").html( "-");
+            }
 
             glot.render();
             $('#PoiView_Modal').modal({ backdrop: 'static', keyboard: true });
