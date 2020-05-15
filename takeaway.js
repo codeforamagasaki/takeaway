@@ -56,7 +56,7 @@ $(document).ready(function () {
         // initialize leaflet
         console.log("initialize leaflet.");
         map = L.map('mapid', { center: Conf.local.DefaultCenter, zoom: Conf.local.DefaultZoom, maxZoom: 20 });
-        gl = L.mapboxGL({ container: 'map', attribution: Conf.local.attribution, accessToken: 'no-token', style: Conf.local.style }).addTo(map);
+        gl = L.mapboxGL({ container: 'map', attribution: Conf.local.attribution, accessToken: Conf.local.token, style: Conf.local.style }).addTo(map);
         map.zoomControl.setPosition("bottomright");
         L.control.locate({ position: 'bottomright', strings: { title: "現在地を表示" }, locateOptions: { maxZoom: 16 } }).addTo(map);
         L.control.scale({ imperial: false, maxWidth: 200 }).addTo(map);
